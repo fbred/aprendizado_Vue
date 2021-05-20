@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Passagem de daods</title>
+    </head>
+    <body>
+
+        <div id="data_biding">
+            <!--Passando o objeto para ser exibido-->
+            <h1 v-bind:title="tagMessage" > {{message}} </h1>
+
+            <h2>{{ message.toUpperCase() }}</h2>
+
+            <p>Meu nome é {{person.name}}. Tenho {{person.age}} anos</p>
+
+            <!--passando um objeto para manipular o HTML//o v-html faz com que qualquer parametro passado pelo vue seha interpretado como HTML-->
+            <span v-html="tag"></span>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+
+        <script>
+
+            let app = new Vue({
+                el: '#data_biding',
+                data: {
+                    message: "mensagem para ser exibida",
+                    person: {
+                        name: 'Antony',
+                        age: 20
+                    },
+                    tag: '<button>Clique Aqui</button>',
+                    tagMessage: 'Essa é uma tag de título'
+                }
+            })
+
+        </script>
+        
+    </body>
+</html>
